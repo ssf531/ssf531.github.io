@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ssf531.github.io</id>
     <title>Fan&apos;Blog</title>
-    <updated>2020-07-01T04:37:13.214Z</updated>
+    <updated>2020-07-22T03:20:23.086Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ssf531.github.io"/>
     <link rel="self" href="https://ssf531.github.io/atom.xml"/>
@@ -10,6 +10,45 @@
     <logo>https://ssf531.github.io/images/avatar.png</logo>
     <icon>https://ssf531.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Fan&apos;Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[Example]]></title>
+        <id>https://ssf531.github.io/post/example/</id>
+        <link href="https://ssf531.github.io/post/example/">
+        </link>
+        <updated>2020-07-22T07:16:16.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="heading">Heading</h1>
+<h2 id="sub-heading">Sub-heading</h2>
+<p>Paragraphs are separated<br>
+by a blank line.</p>
+<p>Two spaces at the end of a line<br>
+produces a line break.</p>
+<p>Text attributes <em>italic</em>,<br>
+<strong>bold</strong>, <code>monospace</code>.</p>
+<p>Horizontal rule:</p>
+<hr>
+<p>Strikethrough:<br>
+<s>strikethrough</s></p>
+<p>Bullet list:</p>
+<ul>
+<li>apples</li>
+<li>oranges</li>
+<li>pears</li>
+</ul>
+<p>Numbered list:</p>
+<ol>
+<li>lather</li>
+<li>rinse</li>
+<li>repeat</li>
+</ol>
+<p>An <a href="https://cdn.business2community.com/wp-content/uploads/2013/09/best-press-release-example.jpg">example</a>.</p>
+<figure data-type="image" tabindex="1"><img src="Icon-pictures.png" alt="Image" title="icon" loading="lazy"></figure>
+<blockquote>
+<p>Markdown uses email-style<br>
+characters for blockquoting.</p>
+</blockquote>
+<p>Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[About]]></title>
         <id>https://ssf531.github.io/post/about/</id>
