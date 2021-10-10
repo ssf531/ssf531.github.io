@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ssf531.github.io</id>
     <title>Fan&apos;Blog</title>
-    <updated>2021-10-10T03:53:55.489Z</updated>
+    <updated>2021-10-10T03:55:33.822Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ssf531.github.io"/>
     <link rel="self" href="https://ssf531.github.io/atom.xml"/>
@@ -16,38 +16,6 @@
         <link href="https://ssf531.github.io/post/example/">
         </link>
         <updated>2020-07-23T03:16:16.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="heading">Heading</h1>
-<h2 id="sub-heading">Sub-heading</h2>
-<p>Paragraphs are separated<br>
-by a blank line.</p>
-<p>Two spaces at the end of a line<br>
-produces a line break.</p>
-<p>Text attributes <em>italic</em>,<br>
-<strong>bold</strong>, <code>monospace</code>.</p>
-<p>Horizontal rule:</p>
-<hr>
-<p>Strikethrough:<br>
-<s>strikethrough</s></p>
-<p>Bullet list:</p>
-<ul>
-<li>apples</li>
-<li>oranges</li>
-<li>pears</li>
-</ul>
-<p>Numbered list:</p>
-<ol>
-<li>lather</li>
-<li>rinse</li>
-<li>repeat</li>
-</ol>
-<p>An <a href="https://images.app.goo.gl/3iPTDyAAraDWNKUT8">example</a>.<br>
-<img src="https://ssf531.github.io/post-images/1595388737309.jpg" alt="" title="example image" loading="lazy"></p>
-<blockquote>
-<p>Markdown uses email-style<br>
-characters for blockquoting.</p>
-</blockquote>
-<p>Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[About]]></title>
@@ -55,15 +23,5 @@ characters for blockquoting.</p>
         <link href="https://ssf531.github.io/post/about/">
         </link>
         <updated>2020-07-01T19:57:59.000Z</updated>
-        <content type="html"><![CDATA[<p>Welcome to my blog! 🤝</p>
-<h2 id="about-this-site">🏠 About this site</h2>
-<p>This is a simple blog.</p>
-<h2 id="who-is-the-blogger">👨‍💻 Who is the blogger</h2>
-<p>I am Fan, a Chinese living in New Zealand, majoring in computer science</p>
-<h2 id="hobbies">⛹ Hobbies</h2>
-<p>I like photography, travel, and playing pc games</p>
-<h2 id="contact-me">📬 Contact me</h2>
-<p>shishunfan@gmail.com</p>
-]]></content>
     </entry>
 </feed>
