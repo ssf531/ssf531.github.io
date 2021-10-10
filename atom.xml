@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ssf531.github.io</id>
     <title>Fan&apos;Blog</title>
-    <updated>2020-07-22T03:34:33.004Z</updated>
+    <updated>2021-10-10T03:50:20.864Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ssf531.github.io"/>
     <link rel="self" href="https://ssf531.github.io/atom.xml"/>
-    <subtitle>Day day up~</subtitle>
+    <subtitle>Happy day~</subtitle>
     <logo>https://ssf531.github.io/images/avatar.png</logo>
     <icon>https://ssf531.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Fan&apos;Blog</rights>
+    <rights>All rights reserved 2021, Fan&apos;Blog</rights>
     <entry>
         <title type="html"><![CDATA[Example]]></title>
         <id>https://ssf531.github.io/post/example/</id>
@@ -54,17 +54,16 @@ characters for blockquoting.</p>
         <id>https://ssf531.github.io/post/about/</id>
         <link href="https://ssf531.github.io/post/about/">
         </link>
-        <updated>2020-07-01T15:57:59.000Z</updated>
+        <updated>2020-07-01T19:57:59.000Z</updated>
         <content type="html"><![CDATA[<p>Welcome to my blog! 🤝</p>
 <h2 id="about-this-site">🏠 About this site</h2>
-<p>This is a blog that records my life and study</p>
+<p>This is a simple blog.</p>
 <h2 id="who-is-the-blogger">👨‍💻 Who is the blogger</h2>
-<p>I am Fan, a Chinese student living in New Zealand, majoring in computer science</p>
+<p>I am Fan, a Chinese living in New Zealand, majoring in computer science</p>
 <h2 id="hobbies">⛹ Hobbies</h2>
 <p>I like photography, travel, and playing pc games</p>
 <h2 id="contact-me">📬 Contact me</h2>
-<p>Email me if you have any questions:<br>
-shishunfan@gmail.com</p>
+<p>shishunfan@gmail.com</p>
 ]]></content>
     </entry>
 </feed>
