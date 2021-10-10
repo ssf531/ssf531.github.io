@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ssf531.github.io</id>
+    <id>http://ssf531.github.io</id>
     <title>Fan&apos;Blog</title>
-    <updated>2021-10-10T03:58:38.603Z</updated>
+    <updated>2021-10-10T04:12:49.319Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ssf531.github.io"/>
-    <link rel="self" href="https://ssf531.github.io/atom.xml"/>
+    <link rel="alternate" href="http://ssf531.github.io"/>
+    <link rel="self" href="http://ssf531.github.io/atom.xml"/>
     <subtitle>Happy day~</subtitle>
-    <logo>https://ssf531.github.io/images/avatar.png</logo>
-    <icon>https://ssf531.github.io/favicon.ico</icon>
+    <logo>http://ssf531.github.io/images/avatar.png</logo>
+    <icon>http://ssf531.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Fan&apos;Blog</rights>
     <entry>
         <title type="html"><![CDATA[Example]]></title>
-        <id>https://ssf531.github.io/post/example/</id>
-        <link href="https://ssf531.github.io/post/example/">
+        <id>http://ssf531.github.io/post/example/</id>
+        <link href="http://ssf531.github.io/post/example/">
         </link>
         <updated>2020-07-23T03:16:16.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[About]]></title>
-        <id>https://ssf531.github.io/post/about/</id>
-        <link href="https://ssf531.github.io/post/about/">
+        <id>http://ssf531.github.io/post/about/</id>
+        <link href="http://ssf531.github.io/post/about/">
         </link>
         <updated>2020-07-01T19:57:59.000Z</updated>
     </entry>
