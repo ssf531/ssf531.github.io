@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ssf531.github.io</id>
     <title>Fan&apos;Blog</title>
-    <updated>2021-10-10T04:55:44.094Z</updated>
+    <updated>2021-10-18T01:12:49.289Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ssf531.github.io"/>
     <link rel="self" href="https://ssf531.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://ssf531.github.io/images/avatar.png</logo>
     <icon>https://ssf531.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Fan&apos;Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[EF core从数据库快速生成实体及context]]></title>
+        <id>https://ssf531.github.io/post/ef-core-cong-shu-ju-ku-kuai-su-sheng-cheng-shi-ti-ji-context/</id>
+        <link href="https://ssf531.github.io/post/ef-core-cong-shu-ju-ku-kuai-su-sheng-cheng-shi-ti-ji-context/">
+        </link>
+        <updated>2021-10-18T10:57:01.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to display JSON data in jQuery DataTables via Ajax]]></title>
+        <id>https://ssf531.github.io/post/how-to-display-json-data-in-jquery-datatables-via-ajax/</id>
+        <link href="https://ssf531.github.io/post/how-to-display-json-data-in-jquery-datatables-via-ajax/">
+        </link>
+        <updated>2021-10-01T06:06:05.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Entity Framework Core Table Mapping]]></title>
+        <id>https://ssf531.github.io/post/entity-framework-core-table-mapping/</id>
+        <link href="https://ssf531.github.io/post/entity-framework-core-table-mapping/">
+        </link>
+        <updated>2021-09-22T06:10:04.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Example]]></title>
         <id>https://ssf531.github.io/post/example/</id>

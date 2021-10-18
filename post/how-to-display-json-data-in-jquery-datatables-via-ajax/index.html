@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Example | Fan&#39;Blog</title>
+<title>How to display JSON data in jQuery DataTables via Ajax | Fan&#39;Blog</title>
 
 <link rel="shortcut icon" href="https://ssf531.github.io/favicon.ico?v=1634519566624">
 
@@ -89,50 +89,194 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Example
+                    How to display JSON data in jQuery DataTables via Ajax
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-07-23 ·
+                        · 2021-10-01 ·
                     </time>
                     
-                        <a href="https://ssf531.github.io/tag/ezNI-AYQ6/" class="post-tags">
-                            # example
+                        <a href="https://ssf531.github.io/tag/DGPxe2Kho/" class="post-tags">
+                            # json
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/_WIxP5sGHy/" class="post-tags">
+                            # datatables
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/UpGGXh6soi/" class="post-tags">
+                            # ajax
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/96ODlANvgS/" class="post-tags">
+                            # jquery
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/TUMxnK_IHG/" class="post-tags">
+                            # js
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <h1 id="heading">Heading</h1>
-<h2 id="sub-heading">Sub-heading</h2>
-<p>Paragraphs are separated<br>
-by a blank line.</p>
-<p>Two spaces at the end of a line<br>
-produces a line break.</p>
-<p>Text attributes <em>italic</em>,<br>
-<strong>bold</strong>, <code>monospace</code>.</p>
-<p>Horizontal rule:</p>
-<hr>
-<p>Strikethrough:<br>
-<s>strikethrough</s></p>
-<p>Bullet list:</p>
-<ul>
-<li>apples</li>
-<li>oranges</li>
-<li>pears</li>
-</ul>
-<p>Numbered list:</p>
-<ol>
-<li>lather</li>
-<li>rinse</li>
-<li>repeat</li>
-</ol>
-<p>An <a href="https://images.app.goo.gl/3iPTDyAAraDWNKUT8">example</a>.<br>
-<img src="https://ssf531.github.io/post-images/1595388737309.jpg" alt="" title="example image" loading="lazy"></p>
-<blockquote>
-<p>Markdown uses email-style<br>
-characters for blockquoting.</p>
+                    <blockquote>
+<p>原文地址 <a href="https://stackoverflow.com/questions/32531750/how-to-display-json-data-in-jquery-datatables-via-ajax/32539398#32539398">stackoverflow.com</a> Brian Tompsett - 汤莱恩</p>
 </blockquote>
-<p>Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.</p>
+<p>I've been trying to get my JSON data in jQuery DataTables component.</p>
+<p>First I wrote a JavaScript and a view like the code shown below:</p>
+<pre><code>$.fn.dataTable.Editor({
+    ajax: &quot;http://localhost/example22/index.php?r=site/display&quot;,
+    table: &quot;#example&quot;,
+    fields: [{
+        label: &quot;Name:&quot;,
+        name: &quot;name&quot;
+    }, {
+        label: &quot;Designation:&quot;,
+        name: &quot;designation&quot;
+    }, {
+        label: &quot;Address:&quot;,
+        name: &quot;address&quot;
+    }, {
+        label: &quot;Salary:&quot;,
+        name: &quot;salary&quot;
+    }]
+});
+
+$('#example').DataTable({
+    lengthChange: false,
+    ajax: &quot;http://localhost/example22/index.php?r=site/display&quot;,
+    columns: [{
+        allk: &quot;name&quot;
+    }, {
+        allk: &quot;designation&quot;
+    }, {
+        allk: &quot;address&quot;
+    }, {
+        allk: &quot;salary&quot;
+    }],
+    select: true
+});
+</code></pre>
+<p>and a view like</p>
+<pre><code>&lt;table id=&quot;example&quot; class=&quot;table table-striped table-bordered&quot; cellspacing=&quot;0&quot; width=&quot;100%&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;
+                &lt;th&gt;Designation&lt;/th&gt;
+                &lt;th&gt;Address&lt;/th&gt;
+                &lt;th&gt;Salary&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+&lt;/table&gt;
+</code></pre>
+<p>and the url that is provided contains the following JSON data respectively</p>
+<pre><code>{
+    &quot;allk&quot;: [
+        {
+            &quot;name&quot;: &quot;raju&quot;,
+            &quot;designation&quot;: &quot;developer&quot;,
+            &quot;address&quot;: &quot;he is from viswasapuram&quot;,
+            &quot;salary&quot;: &quot;30000&quot;
+        },
+        {
+            &quot;name&quot;: &quot;bob&quot;,
+            &quot;designation&quot;: &quot;designer&quot;,
+            &quot;address&quot;: &quot;no idea&quot;,
+            &quot;salary&quot;: &quot;100000&quot;
+        },
+        {
+            &quot;name&quot;: &quot;bob&quot;,
+            &quot;designation&quot;: &quot;designer&quot;,
+            &quot;address&quot;: &quot;no idea&quot;,
+            &quot;salary&quot;: &quot;100000&quot;
+        },
+        {
+            &quot;name&quot;: &quot;suresh&quot;,
+            &quot;designation&quot;: &quot;designer&quot;,
+            &quot;address&quot;: &quot;fffswss&quot;,
+            &quot;salary&quot;: &quot;1212&quot;
+        },
+        {
+            &quot;name&quot;: &quot;john&quot;,
+            &quot;designation&quot;: &quot;designer&quot;,
+            &quot;address&quot;: &quot;california&quot;,
+            &quot;salary&quot;: &quot;3000000&quot;
+        },
+        {
+            &quot;name&quot;: &quot;suresh&quot;,
+            &quot;designation&quot;: &quot;tester&quot;,
+            &quot;address&quot;: &quot;he is from cheeran maanagar&quot;,
+            &quot;salary&quot;: &quot;20000&quot;
+        }
+    ]
+}
+</code></pre>
+<p>Can someone help me on how to use DataTables with this application?</p>
+<h3 id="solution">SOLUTION</h3>
+<p>Use <a href="https://datatables.net/reference/option/ajax.dataSrc"><code>ajax.dataSrc</code></a> option to specify property holding data in your JSON response.</p>
+<p>For example:</p>
+<pre><code>$('#example').DataTable({
+   // ... skipped other options ...
+   ajax: {
+       url: &quot;http://localhost/example22/index.php?r=site/display&quot;,
+       dataSrc: 'allk'
+   },
+   columns: [
+       { data: &quot;name&quot;}, 
+       { data: &quot;designation&quot;}, 
+       { data: &quot;address&quot; }, 
+       { data: &quot;salary&quot;}
+   ]
+});
+</code></pre>
+<h3 id="demo">DEMO</h3>
+<p>See <a href="https://jsfiddle.net/jqkwco17/">this jsFiddle</a> for code and demonstration.</p>
+<p>Gyrocode.com</p>
+<p>In Nodejs when you have a DataTable declared like this</p>
+<pre><code>&lt;table id=&quot;example&quot; class=&quot;table table-striped table-bordered&quot; style=&quot;width:100%&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;Class&lt;/th&gt;
+            &lt;th&gt;Parents Name&lt;/th&gt;
+            &lt;th&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+&lt;/table&gt;
+</code></pre>
+<p>then your java script should be like this</p>
+<pre><code>$(document).ready(function() {
+    $(&quot;#example&quot;).DataTable({
+        ajax: {
+            url: &quot;../kidsinfo&quot;,
+            dataSrc: &quot;&quot;
+        },
+        columns: [
+            { data: &quot;kid_name&quot; },
+            { data: &quot;class&quot; },
+            { data: &quot;parents_name&quot; },
+            { data: &quot;age&quot; },           
+        ],          
+        iDisplayLength: 1,
+        iDisplayStart: 0
+    });
+});
+</code></pre>
+<p>Important point to note here is that your json data from server is like this</p>
+<pre><code>[{&quot;id&quot;:1,&quot;kid_name&quot;:&quot;John&quot;,&quot;class&quot;:&quot;Hancock&quot;,&quot;parents_name&quot;:&quot;dharam&quot;,&quot;age&quot;:&quot;21&quot;}]
+</code></pre>
+<p>then your javascript code should use the name <code>kid_name</code> from the json data received to relate the information you want to display in the column.</p>
+<p>If the json data from the server is like this</p>
+<pre><code>{
+    &quot;info&quot;: [{
+        &quot;id&quot;: 1,
+        &quot;kid_name&quot;: &quot;John&quot;,
+        &quot;class&quot;: &quot;Hancock&quot;,
+        &quot;parents_name&quot;: &quot;dharam&quot;,
+        &quot;age&quot;: &quot;21&quot;
+    }]
+}
+</code></pre>
+<p>then your java script should have <code>dataSrc: &quot;info&quot;</code></p>
 
                 </div>
             </article>
@@ -141,8 +285,8 @@ characters for blockquoting.</p>
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://ssf531.github.io/post/about/" class="post-title gt-a-link">
-                    About
+                <a href="https://ssf531.github.io/post/entity-framework-core-table-mapping/" class="post-title gt-a-link">
+                    Entity Framework Core Table Mapping
                 </a>
             </div>
         

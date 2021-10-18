@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Example | Fan&#39;Blog</title>
+<title>Entity Framework Core Table Mapping | Fan&#39;Blog</title>
 
 <link rel="shortcut icon" href="https://ssf531.github.io/favicon.ico?v=1634519566624">
 
@@ -89,50 +89,138 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Example
+                    Entity Framework Core Table Mapping
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-07-23 ·
+                        · 2021-09-22 ·
                     </time>
                     
-                        <a href="https://ssf531.github.io/tag/ezNI-AYQ6/" class="post-tags">
-                            # example
+                        <a href="https://ssf531.github.io/tag/aCJ88HLnI/" class="post-tags">
+                            # entity framework
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/s4b7esrnm3/" class="post-tags">
+                            # c#
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/ANPGHwbsPW/" class="post-tags">
+                            # context
+                        </a>
+                    
+                        <a href="https://ssf531.github.io/tag/gA3b0JO8Dw/" class="post-tags">
+                            # database
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <h1 id="heading">Heading</h1>
-<h2 id="sub-heading">Sub-heading</h2>
-<p>Paragraphs are separated<br>
-by a blank line.</p>
-<p>Two spaces at the end of a line<br>
-produces a line break.</p>
-<p>Text attributes <em>italic</em>,<br>
-<strong>bold</strong>, <code>monospace</code>.</p>
-<p>Horizontal rule:</p>
-<hr>
-<p>Strikethrough:<br>
-<s>strikethrough</s></p>
-<p>Bullet list:</p>
-<ul>
-<li>apples</li>
-<li>oranges</li>
-<li>pears</li>
-</ul>
-<p>Numbered list:</p>
-<ol>
-<li>lather</li>
-<li>rinse</li>
-<li>repeat</li>
-</ol>
-<p>An <a href="https://images.app.goo.gl/3iPTDyAAraDWNKUT8">example</a>.<br>
-<img src="https://ssf531.github.io/post-images/1595388737309.jpg" alt="" title="example image" loading="lazy"></p>
-<blockquote>
-<p>Markdown uses email-style<br>
-characters for blockquoting.</p>
+                    <blockquote>
+<p>原文地址 <a href="https://stackoverflow.com/questions/42190909/how-to-specify-entity-framework-core-table-mapping">stackoverflow.com</a> DavidG</p>
 </blockquote>
-<p>Inline <abbr title="Hypertext Markup Language">HTML</abbr> is supported.</p>
+<p>I've made a simple Entity Framework ASP Core Application that works but I do not know why:</p>
+<p>I've made a context like this:</p>
+<pre><code>public class AstootContext : DbContext
+{
+    public AstootContext(DbContextOptions&lt;AstootContext&gt; options)
+        : base(options)
+    { }
+
+    public DbSet&lt;Account&gt; Accounts { get; set; }
+    public DbSet&lt;User&gt; Users { get; set; }
+}
+</code></pre>
+<p>And I have two tables with models like this:</p>
+<pre><code>public class Account
+{
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string PasswordHash { get; set; }
+    public DateTime Created { get; set; }
+
+    List&lt;User&gt; Users { get; set; }
+}
+
+public class User
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string Email { get; set; }
+    public DateTime Birthday { get; set; }
+    public Account Account { get; set; }
+}
+</code></pre>
+<p>The interesting thing is that when I run my application it actually can pick up the data. It just seems weird because I have not specified any table mapping. I'm assuming this just automaps because the specified tables are the same name.</p>
+<p>My questions are:</p>
+<ol>
+<li>
+<p>How do I specify Table explicit table mapping in case I do not want my model names to be exactly the same as the DB?</p>
+</li>
+<li>
+<p>How do I specify Custom Column Mapping.</p>
+</li>
+<li>
+<p>Is there anything special I have to specify for Primary/Foreign Keys</p>
+</li>
+</ol>
+<p><strong>edit</strong></p>
+<p>To clarify</p>
+<ol>
+<li>
+<p>Say I had a table in the DB <code>MyAccounts</code> and I wanted to map that to an entity <code>Accounts</code>.</p>
+</li>
+<li>
+<p>Say I had a column <code>password</code> and I wanted that to map to a POCO property <code>PasswordHash</code></p>
+</li>
+</ol>
+<p>johnny 5:</p>
+<ol>
+<li>
+<p>To specify the name of the database table, you can use an attribute or the fluent API:</p>
+<p>Using Attributes:</p>
+<pre><code>[Table(&quot;MyAccountsTable&quot;)]
+public class Account
+{
+     public string PasswordHash { get; set; }
+}
+</code></pre>
+<p>Using Fluent API:</p>
+<pre><code>public class YourContext : DbContext
+{
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity&lt;Language&gt;(entity =&gt; {
+            entity.ToTable(&quot;MyAccountsTable&quot;);
+        });
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>To name your columns manually, it's very similar and you can use an attribute or the fluent API:</p>
+<p>Using Attributes:</p>
+<pre><code>public class Account
+{
+    [Column(&quot;MyPasswordHashColumn&quot;)]
+    public string PasswordHash { get; set; }
+
+}
+</code></pre>
+<p>Using Fluent API:</p>
+<pre><code>public class YourContext : DbContext
+{
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity&lt;Language&gt;(x =&gt; x
+            .ToTable(&quot;MyAccountsTable&quot;)
+            .Property(entity =&gt; entity.PasswordHash)
+                .HasField(&quot;MyPasswordHashColumn&quot;)
+        );
+    }
+}
+</code></pre>
+</li>
+</ol>
 
                 </div>
             </article>
@@ -141,8 +229,8 @@ characters for blockquoting.</p>
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://ssf531.github.io/post/about/" class="post-title gt-a-link">
-                    About
+                <a href="https://ssf531.github.io/post/example/" class="post-title gt-a-link">
+                    Example
                 </a>
             </div>
         
